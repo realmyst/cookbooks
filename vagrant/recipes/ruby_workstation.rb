@@ -6,6 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+package "curl"
+include_recipe "apt"
 include_recipe "rvm::system"
 include_recipe "nginx"
 include_recipe "postgresql"
@@ -18,16 +20,15 @@ execute "change_shell" do
   command "chsh -s /bin/zsh vagrant"
 end
 
-include_recipe "vagrant::install_homedir"
-
 package 'htop'
-package 'curl'
-package 'ffmpeg'
-package 'sphinxsearch'
-package 'git-flow'
+package "git-flow"
+package "ffmpeg"
+package "sphinxsearch"
 package 'imagemagick'
 package 'exim4'
 package 'libmysqlclient-dev'
+
+include_recipe "vagrant::install_homedir"
 
 group 'rvm' do
   members %w'vagrant'
