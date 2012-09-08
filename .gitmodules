@@ -4,3 +4,6 @@
 [submodule "opscode"]
 	path = opscode
 	url = git://github.com/opscode/cookbooks.git
+[submodule "kaize"]
+	path = kaize
+	url = git@github.com:kaize/cookbooks.git
