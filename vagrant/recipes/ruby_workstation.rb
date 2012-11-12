@@ -8,7 +8,7 @@
 #
 package "curl"
 include_recipe "apt"
-include_recipe "rvm::system"
+include_recipe "rvm::user"
 include_recipe "nginx"
 include_recipe "postgresql"
 
@@ -35,4 +35,4 @@ group 'rvm' do
   append true
 end
 
-ruby 'ruby-1.9.3-p194'
+ruby 'ruby-1.9.3'
